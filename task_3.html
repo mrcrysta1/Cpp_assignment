@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <span>Creating Array</span>
+    <input
+      type="text"
+      value=""
+      placeholder="Add array element"
+      name="operator"
+      id="input"
+    />
+    <h3 id="answer"></h3>
+    <button type="button" onclick="sum_number()">Sum of Numbers</button>
+    <button type="button" onclick="avr_number()">Average of Numbers</button>
+    <button type="button" onclick="max_number()">Maximum number</button>
+    <!-- --------------------- -->
+    <script>
+      function sum_number() {
+        var input = document.getElementById("input").value;
+        var answer = document.getElementById("answer");
+        var input_split = input.split("");
+        var sum = 0;
+        for (var key in input_split) {
+          var convrt = parseInt(input_split[key]);
+          var sum = sum + convrt;
+        }
+        answer.innerText = input_split + " sum of all array elements: " + sum;
+      }
+      // <!-- --------------------- -->
+      function avr_number() {
+        var input = document.getElementById("input").value;
+        var answer = document.getElementById("answer");
+        var input_split = input.split("");
+        var sum = 0;
+        for (var key in input_split) {
+          var convrt = parseInt(input_split[key]);
+          var sum = sum + convrt;
+        }
+        var avrg = sum / input_split.length;
+        answer.innerText = input_split + " Avrg of all array elements: " + avrg;
+      }
+      // <!-- --------------------- -->
+
+      function max_number() {
+        var input = document.getElementById("input").value;
+        var answer = document.getElementById("answer");
+        var input_split = input.split("");
+        var max = [0];
+        for (var key in input_split) {
+          if (max < input_split[key]) {
+              max = input_split[key];
+          }
+        }
+        answer.innerText = input_split + " Maximum Number " + max;
+      }
+    </script>
+  </body>
+</html>

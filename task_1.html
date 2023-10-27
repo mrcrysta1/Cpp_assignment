@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input
+      type="text"
+      value=""
+      placeholder="Select operator + - x /"
+      name="operator"
+      id="operator"
+    />
+    <input
+      type="text"
+      value=""
+      placeholder="Enter a number 1"
+      name="operand1"
+      id="operand1"
+    />
+    <input
+      type="text"
+      value=""
+      placeholder="Enter a number 2"
+      name="operand2"
+      id="operand2"
+    />
+    <h3 id="answer"></h3>
+    <button type="button" id="submit" onclick="calc()">Calulate</button>
+  </body>
+  <script>
+    function calc() {
+      var answer1 = document.getElementById("answer");
+      operator = document.getElementById("operator").value;
+      operand1 = document.getElementById("operand1").value;
+      operand2 = document.getElementById("operand2").value;
+
+      var value1 = parseInt(operand1);
+      var value2 = parseInt(operand2);
+      var result = 0;
+      if (operator == "+") {
+        var result = value1 + value2;
+    }
+    
+    if (operator == "-") {
+        var result = value2 - value1;
+      }
+
+      if (operator == "*") {
+        var result = value1 * value2;
+      }
+
+      if (operator == "/") {
+        var result = value1 / value2;
+      }
+      answer1.innerText = result;
+    //   console.log(result);
+    }
+  </script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h4>Person infomation</h4>
+    <p id="info"></p>
+    <input type="text" id="pr_name" placeholder="Property Name" />
+    <input type="text" id="pr_value" placeholder="Property Value" />
+
+    <button id="add_pr">Add Property</button>
+    <button id="upd_pr">Update Property</button>
+  </body>
+  <script>
+      person = { firstname: "ali", lastname: "hassan", birth: "2/2/23" };
+    var add_pr = document.getElementById("add_pr");
+    add_pr.addEventListener("click", function (e) {
+        var pr_name = document.getElementById("pr_name").value;
+        var pr_value = document.getElementById("pr_value").value;
+        person[pr_name] = pr_value;
+        var element = "";
+        for (const key in person) {
+          element = element + person[key] + "<br/>";
+        }
+        document.getElementById("info").innerHTML = element;
+    });
+
+
+    var upd_pr = document.getElementById("upd_pr");
+    upd_pr.addEventListener("click", function (e) {
+        var pr_name = document.getElementById("pr_name").value;
+        var pr_value = document.getElementById("pr_value").value;
+        person[pr_name] = pr_value;
+        var element = "";
+        for (const key in person) {
+          element = element + person[key] + "<br/>";
+        }
+        document.getElementById("info").innerHTML = element;
+    });
+
+
+  </script>
+</html>

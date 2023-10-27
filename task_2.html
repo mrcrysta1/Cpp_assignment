@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input
+      type="text"
+      value=""
+      placeholder="Add string value"
+      name="operator"
+      id="input"
+    />
+    <h3 id="answer"></h3>
+    <button type="button" id="submit" onclick="Reverse()">
+      Reverse the string
+    </button>
+    <button type="button" id="submit" onclick="Vowels()">
+      Count the No of Vowels
+    </button>
+    <button type="button" id="submit" onclick="spaces()">
+      Remove all spaces
+    </button>
+    <!-- --------------------- -->
+    <script>
+        function Reverse() {
+            var input = document.getElementById("input").value;
+            var answer = document.getElementById("answer");
+            var str_split = input.split("");
+            var check = str_split.reverse();
+            alert(check);
+            // var array = [];
+            // for (let a = str_split.length - 1; a >= 0; a--) {
+            //     // const element = input.split('').reverse().join('');
+            //     var element = str_split[a];
+            //     array.push(element);
+            // }
+            // var str_arr = array.join("");
+            // answer.innerText = "Reverse stirng: "+str_arr;
+        }
+        // <!-- --------------------- -->
+        function Vowels() {
+            var input = document.getElementById("input").value;
+            // var vowels = input.match(/[aeiouAEIOU]/g);
+            // var vowelCount = vowels ? vowels.length : 0;
+            var answer = document.getElementById("answer");
+            var str_split = input.split("");
+            var count_vowl = 0;
+            var array = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+            for (var a = 0; a < str_split.length; a++) {
+                for (var b = 0; b < array.length; b++) {
+                    if (str_split[a] == array[b]) {
+                        count_vowl = count_vowl + 1;
+                    } else {
+                        continue;
+                    }
+          }
+        }
+        answer.innerText = "No of Vowels: " + count_vowl;
+    }
+    // <!-- --------------------- -->
+
+      function spaces() {
+        var input = document.getElementById("input").value;
+        var str_split = input.split(" ");
+        // var str_arr = input.replace(/\s+/g, "");
+        var str_arr = str_split.join("");
+
+        var answer = document.getElementById("answer");
+        answer.innerText = "Remove all space: "+str_arr;
+      }
+    </script>
+  </body>
+</html>
